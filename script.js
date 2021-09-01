@@ -12,6 +12,16 @@ addSalaire.addEventListener('click', function () {
 // je stoque dans ma variable x les input
 function addSalaireTransaction() {
     var x = document.createElement('input');
+    var confirm = document.querySelector('button');
+    x.addEventListener('onfocus', function () {
+        resultat.innerHTML = x.value;
+    })
+    x.addEventListener('keyup', function () {
+        resultat.innerHTML = x.value;
+    })
+    x.addEventListener('keypress', function () {
+        resultat.innerHTML = x.value;
+    })
     // je dis que ça attend un nombre
     x.setAttribute('type', 'number');
     // on crée un élement enfant 
@@ -46,9 +56,9 @@ function addDepensesTransaction() {
 }
 // on affiche les resultats (pas fini)
 function result() {
-    var x_dep = salaire.getElementByTagName('input').value;
+    var x_dep = salaire.getElementByTagName('input');
 
     x_dep.forEach(element => {
-        console.log(element);
+        element.innerHTML = htmlString;
     });
 }
