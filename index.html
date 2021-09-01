@@ -5,21 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Depenses Budget<div class="inc-exp-container">
-            <div>
-                <h4>Salaire</h4>
-                <p id="salaire" class="money plus">+$0.00</p>
-            </div>
-            <div>
-                <h4>Dépenses</h4>
-                <p id="transactions" class="money minus">-$0.00</p>
-            </div>
-        </div>
-    </title>
+    <title>Depenses Budget<title class="inc-exp-container"></title>
 </head>
 
 <body>
-    <script src="script.js"></script>
+    <div class="container">
+        <div>
+            <h4>Salaire</h4>
+            <p id="salaire" class="money plus">+$0.00</p>
+        </div>
+        <div>
+            <h4>Dépenses</h4>
+            <p id="transactions" class="money minus">-$0.00</p>
+        </div>
+        <div>
+            <h4>Résultats</h4>
+            <p id="resultat" class="money minus">-</p>
+        </div>
+        <button id="addSalaire">Ajouter salaire</button>
+        <button id="addDepenses">Ajouter dépenses</button>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>
