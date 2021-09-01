@@ -46,9 +46,9 @@ function addDepensesTransaction() {
 }
 // on affiche les resultats (pas fini)
 function result() {
-    var x_dep = salaire.getElementByTagName('input');
+    var x_dep = salaire.getElementByTagName('input').value;
 
     x_dep.forEach(element => {
-        console.log(element.value);
+        console.log(element);
     });
 }
