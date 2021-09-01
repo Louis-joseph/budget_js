@@ -2,6 +2,7 @@
 
 let salaire = document.getElementById('salaire');
 let transaction = document.getElementById('transactions');
+var total = salaire + transaction;
 let resultat = document.getElementById('resultat');
 let addSalaire = document.getElementById('addSalaire');
 let addDepenses = document.getElementById('addDepenses');
@@ -12,15 +13,14 @@ addSalaire.addEventListener('click', function () {
 // je stoque dans ma variable x les input
 function addSalaireTransaction() {
     var x = document.createElement('input');
-    var confirm = document.querySelector('button');
     x.addEventListener('onfocus', function () {
-        resultat.innerHTML = x.value;
+        result();
     })
     x.addEventListener('keyup', function () {
-        resultat.innerHTML = x.value;
+        result();
     })
     x.addEventListener('keypress', function () {
-        resultat.innerHTML = x.value;
+        result();
     })
     // je dis que ça attend un nombre
     x.setAttribute('type', 'number');
@@ -56,9 +56,27 @@ function addDepensesTransaction() {
 }
 // on affiche les resultats (pas fini)
 function result() {
-    var x_dep = salaire.getElementByTagName('input');
+    var x_dep = salaire.getElementsByTagName('input');
+    var total_dep = 0;
+    // x_dep.for(element => {
+    //     total_dep += element.value;
+    //     // element.innerHTML = x_dep.value;
+    // });
+    for (let i = 0; i < x_dep.length; i++) {
+        const element = x_dep[i].value;
+        total_dep += element;
+    }
+    var x_rev = transaction.getElementsByTagName('input');
 
-    x_dep.forEach(element => {
-        element.innerHTML = htmlString;
-    });
+    var total_rev = 0;
+    // x_rev.forEach(element => {
+    //     total_rev += element.value;
+    //     // element.innerHTML = x_dep.value;
+    // });
+    for (let i = 0; i < x_rev.length; i++) {
+        const element = x_rev[i].value;
+        total_rev += element;
+    }
+
+    resultat.innerHTML = total_rev - total_dep;
 }
