@@ -43,6 +43,15 @@ addDepenses.addEventListener('click', function () {
 // on affiche l'input 
 function addDepensesTransaction() {
     var x = document.createElement('input');
+    x.addEventListener('onfocus', function () {
+        result();
+    })
+    x.addEventListener('keyup', function () {
+        result();
+    })
+    x.addEventListener('keypress', function () {
+        result();
+    })
     x.setAttribute('type', 'number');
     transaction.appendChild(x);
     // on supprime l'input
@@ -66,6 +75,7 @@ function result() {
         const element = x_dep[i].value;
         total_dep += element;
     }
+
     var x_rev = transaction.getElementsByTagName('input');
 
     var total_rev = 0;
